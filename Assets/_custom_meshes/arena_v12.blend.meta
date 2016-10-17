@@ -1,0 +1,148 @@
+fileFormatVersion: 2
+guid: fcbc0146dacda1e46880a29322c53a8b
+timeCreated: 1473313887
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Cage
+    100004: Floor
+    100006: Goal1
+    100008: Goal2
+    100010: Ramp
+    100012: CageF
+    100014: FloorF
+    100016: Goal1F
+    100018: Goal2F
+    100020: RampF
+    100022: Goal1Back
+    100024: Goal1BackF
+    100026: Goal2Back
+    100028: Goal2BackF
+    400000: //RootNode
+    400002: Cage
+    400004: Floor
+    400006: Goal1
+    400008: Goal2
+    400010: Ramp
+    400012: CageF
+    400014: FloorF
+    400016: Goal1F
+    400018: Goal2F
+    400020: RampF
+    400022: Goal1Back
+    400024: Goal1BackF
+    400026: Goal2Back
+    400028: Goal2BackF
+    2300000: //RootNode
+    2300002: Cage
+    2300004: Floor
+    2300006: Goal1
+    2300008: Goal2
+    2300010: Ramp
+    2300012: CageF
+    2300014: FloorF
+    2300016: Goal1F
+    2300018: Goal2F
+    2300020: RampF
+    2300022: Goal1Back
+    2300024: Goal1BackF
+    2300026: Goal2Back
+    2300028: Goal2BackF
+    3300000: //RootNode
+    3300002: Cage
+    3300004: Floor
+    3300006: Goal1
+    3300008: Goal2
+    3300010: Ramp
+    3300012: CageF
+    3300014: FloorF
+    3300016: Goal1F
+    3300018: Goal2F
+    3300020: RampF
+    3300022: Goal1Back
+    3300024: Goal1BackF
+    3300026: Goal2Back
+    3300028: Goal2BackF
+    4300000: Plane
+    4300002: Floor
+    4300004: Ramp
+    4300006: Goal2
+    4300008: Goal1
+    4300010: Cage
+    4300012: RampF
+    4300014: Goal2F
+    4300016: Goal1F
+    4300018: FloorF
+    4300020: CageF
+    4300022: Goal1BackF
+    4300024: Goal1Back
+    4300026: Goal2BackF
+    4300028: Goal2Back
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
