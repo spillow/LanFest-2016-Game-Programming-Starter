@@ -9,7 +9,7 @@ namespace UnityStandardAssets.Vehicles.Car
         public GameObject[] m_WheelMeshes = new GameObject[4];
 
         public float MaxSteerAngle = 30.0f;
-        public float DriveForce = 10000f;
+        public float DriveTorque = 10000f;
         public float BoostForce = 100000f;
 
         private Rigidbody m_Rigidbody;
@@ -39,18 +39,26 @@ namespace UnityStandardAssets.Vehicles.Car
             m_WheelColliders[1].steerAngle = angle;
         }
 
-        private void Accelerate(float accel, float multiplier)
+        private void Boost(float boost)
         {
             m_Rigidbody.AddForce(
-                    transform.forward * accel * multiplier * Time.deltaTime,
+                    transform.forward * boost * BoostForce * Time.deltaTime,
                     ForceMode.Impulse);
+        }
+
+        private void Drive(float accel)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                m_WheelColliders[i].motorTorque = accel * DriveTorque;
+            }
         }
 
         public void Move(float steer, float accel, float jump, float boost)
         {
             ControlWheels(steer);
-            Accelerate(accel, DriveForce);
-            Accelerate(boost, BoostForce);
+            Drive(accel);
+            Boost(boost);
         }
     }
 }
