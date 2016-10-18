@@ -16,12 +16,16 @@ namespace UnityStandardAssets.Vehicles.Car
         private void Start()
         {
             m_OriginalRotation = transform.localRotation;
+            carController = GetComponentInParent<CarController>();
         }
 
 
         private void Update()
         {
-            transform.localRotation = m_OriginalRotation*Quaternion.Euler(0, carController.CurrentSteerAngle, 0);
+            if (carController != null)
+            {
+                transform.localRotation = m_OriginalRotation * Quaternion.Euler(0, carController.CurrentSteerAngle, 0);
+            }
         }
     }
 }
