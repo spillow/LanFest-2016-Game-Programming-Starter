@@ -25,6 +25,9 @@ namespace UnityStandardAssets.Vehicles.Car
         public float BrakeInput = 0.0f;
         public float CurrentSteerAngle = 0.0f;
         public float DownForce = 1000f;
+        public float AirRollFactor = 5000f;
+        public float FlipFactor = 16000f;
+        public float JumpForce = 1000000f;
 
         float m_OldRotation = 0f;
 
@@ -101,12 +104,61 @@ namespace UnityStandardAssets.Vehicles.Car
             }
         }
 
-        public void Move(float steer, float accel, float jump, float boost)
+        // Are all four wheels on a surface?
+        public bool InContactWithSurface()
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                WheelHit wheelhit;
+                m_WheelColliders[i].GetGroundHit(out wheelhit);
+                if (wheelhit.normal == Vector3.zero)
+                    return false; // wheels aren't on the ground 
+            }
+
+            return true;
+        }
+
+        private void MoveInAir(float steer, float accel, float roll)
+        {
+            if (InContactWithSurface())
+                return;
+
+            if (roll > 0f)
+            {
+                Vector3 airRoll = new Vector3(
+                    0f, 0f,
+                    -1f * steer * roll * AirRollFactor * Time.deltaTime);
+                m_Rigidbody.AddRelativeTorque(airRoll, ForceMode.Impulse);
+            }
+            else
+            {
+                Vector3 torqDir = new Vector3(
+                    accel,
+                    steer,
+                    0f);
+                m_Rigidbody.AddRelativeTorque(
+                    torqDir * FlipFactor * Time.deltaTime, ForceMode.Impulse);
+            }
+        }
+
+        private void Jump(float jump)
+        {
+            if (!InContactWithSurface())
+                return;
+
+            m_Rigidbody.AddForce(
+                    transform.up * jump * JumpForce * Time.deltaTime,
+                    ForceMode.Impulse);
+        }
+
+        public void Move(float steer, float accel, float jump, float boost, float roll)
         {
             SteerHelper();
             ControlWheels(steer);
             Drive(accel);
             Boost(boost);
+            Jump(jump);
+            MoveInAir(steer, accel, roll);
             TractionControl();
         }
     }

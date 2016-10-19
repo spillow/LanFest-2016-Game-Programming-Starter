@@ -26,7 +26,8 @@ public class CarUserControl : MonoBehaviour
         float accel  = CrossPlatformInputManager.GetAxis("Vertical");
         float jump   = CrossPlatformInputManager.GetAxis("Jump");
         float boost  = CrossPlatformInputManager.GetAxis("Boost");
+        float roll   = CrossPlatformInputManager.GetAxis("AirRollBrake");
 
-        m_Car.Move(steer, accel, jump, boost);
+        m_Car.Move(steer, accel, jump, boost, roll);
     }
 }
