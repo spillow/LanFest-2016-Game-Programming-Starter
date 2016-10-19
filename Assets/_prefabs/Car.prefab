@@ -639,7 +639,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 428280}
-  m_RootOrder: 11
+  m_RootOrder: 10
 --- !u!4 &415774
 Transform:
   m_ObjectHideFlags: 1
@@ -742,10 +742,10 @@ Transform:
   - {fileID: 426424}
   - {fileID: 432768}
   - {fileID: 416182}
-  - {fileID: 460406}
   - {fileID: 459766}
-  - {fileID: 460970}
+  - {fileID: 460406}
   - {fileID: 412150}
+  - {fileID: 460970}
   m_Father: {fileID: 415774}
   m_RootOrder: 4
 --- !u!4 &430042
@@ -826,8 +826,8 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 451880}
-  - {fileID: 449638}
   - {fileID: 468132}
+  - {fileID: 449638}
   - {fileID: 417230}
   m_Father: {fileID: 415774}
   m_RootOrder: 1
@@ -884,7 +884,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 441286}
-  m_RootOrder: 1
+  m_RootOrder: 2
 --- !u!4 &451880
 Transform:
   m_ObjectHideFlags: 1
@@ -923,7 +923,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 428280}
-  m_RootOrder: 9
+  m_RootOrder: 8
 --- !u!4 &460406
 Transform:
   m_ObjectHideFlags: 1
@@ -936,7 +936,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 428280}
-  m_RootOrder: 8
+  m_RootOrder: 9
 --- !u!4 &460970
 Transform:
   m_ObjectHideFlags: 1
@@ -949,7 +949,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 428280}
-  m_RootOrder: 10
+  m_RootOrder: 11
 --- !u!4 &461154
 Transform:
   m_ObjectHideFlags: 1
@@ -1004,7 +1004,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 441286}
-  m_RootOrder: 2
+  m_RootOrder: 1
 --- !u!4 &476982
 Transform:
   m_ObjectHideFlags: 1
@@ -10919,6 +10919,7 @@ MonoBehaviour:
   MaxSteerAngle: 30
   DriveTorque: 10000
   BoostForce: 100000
+  MaxTorque: 10000
   BrakeInput: 0
   CurrentSteerAngle: 0
   DownForce: 1000

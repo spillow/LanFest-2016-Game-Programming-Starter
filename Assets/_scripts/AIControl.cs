@@ -47,8 +47,6 @@ public class AIControl : MonoBehaviour
 
         m_WheelColliders[0].steerAngle = angle;
         m_WheelColliders[1].steerAngle = angle;
-
-        Debug.Log("angle: " + angle);
     }
 
     // Update is called once per frame
