@@ -24,6 +24,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
         public float BrakeInput = 0.0f;
         public float CurrentSteerAngle = 0.0f;
+
         public float DownForce = 1000f;
         public float AirRollFactor = 5000f;
         public float FlipFactor = 16000f;
@@ -86,6 +87,7 @@ namespace UnityStandardAssets.Vehicles.Car
             float angle = steer * MaxSteerAngle;
             m_WheelColliders[0].steerAngle = angle;
             m_WheelColliders[1].steerAngle = angle;
+            CurrentSteerAngle = angle;
         }
 
         private void Boost(float boost)
@@ -102,6 +104,8 @@ namespace UnityStandardAssets.Vehicles.Car
             {
                 m_WheelColliders[i].motorTorque = torque;
             }
+
+            BrakeInput = -1f*Mathf.Clamp(accel, -1, 0);
         }
 
         // Are all four wheels on a surface?
