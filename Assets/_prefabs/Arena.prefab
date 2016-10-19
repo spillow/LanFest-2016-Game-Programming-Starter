@@ -393,7 +393,6 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 432088}
-  - {fileID: 4000011503117368}
   m_Father: {fileID: 425742}
   m_RootOrder: 4
 --- !u!4 &456794
@@ -435,7 +434,6 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 400450}
-  - {fileID: 4000010138172476}
   m_Father: {fileID: 425742}
   m_RootOrder: 2
 --- !u!4 &487202
@@ -1200,115 +1198,3 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 153682}
   m_IsPrefabParent: 1
---- !u!1 &1000013462733502
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 4000011503117368}
-  - 65: {fileID: 65000011550305142}
-  - 114: {fileID: 114000010458663786}
-  m_Layer: 0
-  m_Name: GoalCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1000014199137812
-GameObject:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 4000010138172476}
-  - 65: {fileID: 65000012581158834}
-  - 114: {fileID: 114000013590617896}
-  m_Layer: 0
-  m_Name: GoalCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4000010138172476
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014199137812}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -205.1, y: 1.6, z: 15.5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 468394}
-  m_RootOrder: 1
---- !u!4 &4000011503117368
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013462733502}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 205.1, y: 1.6000004, z: 15.500008}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 446216}
-  m_RootOrder: 1
---- !u!65 &65000011550305142
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013462733502}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 46.1, y: 66.4, z: 28.2}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65000012581158834
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014199137812}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 46.1, y: 66.4, z: 28.2}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114000010458663786
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013462733502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2883ef483a98a384883bdb838f42cafc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Ball: {fileID: 0}
-  m_GoalColor: 1
-  GoalText: {fileID: 0}
---- !u!114 &114000013590617896
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000014199137812}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2883ef483a98a384883bdb838f42cafc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Ball: {fileID: 0}
-  m_GoalColor: 0
-  GoalText: {fileID: 0}

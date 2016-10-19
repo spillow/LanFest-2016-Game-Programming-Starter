@@ -8,10 +8,6 @@ namespace UnityStandardAssets.Vehicles.Car
         public WheelCollider[] m_WheelColliders = new WheelCollider[4];
         public GameObject[] m_WheelMeshes = new GameObject[4];
 
-        public float MaxSteerAngle = 30.0f;
-        public float DriveTorque = 10000f;
-        public float BoostForce = 100000f;
-
         private float CurrTorque = 0f;
         public float MaxTorque = 10000f;
 
@@ -24,11 +20,6 @@ namespace UnityStandardAssets.Vehicles.Car
 
         public float BrakeInput = 0.0f;
         public float CurrentSteerAngle = 0.0f;
-
-        public float DownForce = 1000f;
-        public float AirRollFactor = 5000f;
-        public float FlipFactor = 16000f;
-        public float JumpForce = 1000000f;
 
         float m_OldRotation = 0f;
 
@@ -48,7 +39,6 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             if (forwardSlip >= 0.5 && CurrTorque >= 0)
             {
-                Debug.Log("slip:" + forwardSlip);
                 CurrTorque -= 10000;
             }
             else
@@ -75,37 +65,17 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void ControlWheels(float steer)
         {
-            for (int i = 0; i < 4; i++)
-            {
-                Quaternion quat;
-                Vector3 position;
-                m_WheelColliders[i].GetWorldPose(out position, out quat);
-                m_WheelMeshes[i].transform.position = position;
-                m_WheelMeshes[i].transform.rotation = quat;
-            }
-
-            float angle = steer * MaxSteerAngle;
-            m_WheelColliders[0].steerAngle = angle;
-            m_WheelColliders[1].steerAngle = angle;
-            CurrentSteerAngle = angle;
+            // TODO
         }
 
         private void Boost(float boost)
         {
-            m_Rigidbody.AddForce(
-                    transform.forward * boost * BoostForce * Time.deltaTime,
-                    ForceMode.Impulse);
+            // TODO
         }
 
         private void Drive(float accel)
         {
-            float torque = accel * (CurrTorque / 4f);
-            for (int i = 0; i < 4; i++)
-            {
-                m_WheelColliders[i].motorTorque = torque;
-            }
-
-            BrakeInput = -1f*Mathf.Clamp(accel, -1, 0);
+            // TODO
         }
 
         // Are all four wheels on a surface?
@@ -124,35 +94,12 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void MoveInAir(float steer, float accel, float roll)
         {
-            if (InContactWithSurface())
-                return;
-
-            if (roll > 0f)
-            {
-                Vector3 airRoll = new Vector3(
-                    0f, 0f,
-                    -1f * steer * roll * AirRollFactor * Time.deltaTime);
-                m_Rigidbody.AddRelativeTorque(airRoll, ForceMode.Impulse);
-            }
-            else
-            {
-                Vector3 torqDir = new Vector3(
-                    accel,
-                    steer,
-                    0f);
-                m_Rigidbody.AddRelativeTorque(
-                    torqDir * FlipFactor * Time.deltaTime, ForceMode.Impulse);
-            }
+            // TODO
         }
 
         private void Jump(float jump)
         {
-            if (!InContactWithSurface())
-                return;
-
-            m_Rigidbody.AddForce(
-                    transform.up * jump * JumpForce * Time.deltaTime,
-                    ForceMode.Impulse);
+            // TODO
         }
 
         public void Move(float steer, float accel, float jump, float boost, float roll)

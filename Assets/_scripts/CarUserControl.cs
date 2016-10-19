@@ -13,21 +13,11 @@ public class CarUserControl : MonoBehaviour
         m_Car = GetComponent<CarController>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void FixedUpdate()
     {
-        // pass the input to the car!
-        float steer  = CrossPlatformInputManager.GetAxis("Horizontal");
-        float accel  = CrossPlatformInputManager.GetAxis("Vertical");
-        float jump   = CrossPlatformInputManager.GetAxis("Jump");
-        float boost  = CrossPlatformInputManager.GetAxis("Boost");
-        float roll   = CrossPlatformInputManager.GetAxis("AirRollBrake");
+        // TODO
 
-        m_Car.Move(steer, accel, jump, boost, roll);
+        // Uncomment after defining variables
+        //m_Car.Move(steer, accel, jump, boost, roll);
     }
 }

@@ -25,9 +25,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 461154}
-  - 54: {fileID: 5442364}
-  - 114: {fileID: 114000012848747364}
-  - 114: {fileID: 114000010594972938}
   m_Layer: 0
   m_Name: Car
   m_TagString: Player
@@ -962,7 +959,6 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 415774}
-  - {fileID: 4000011148194062}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &462150
@@ -1617,21 +1613,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 182742}
   m_Mesh: {fileID: 4300038, guid: e6fec471c20b9d148b1f87910e67bea4, type: 3}
---- !u!54 &5442364
-Rigidbody:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 104224}
-  serializedVersion: 2
-  m_Mass: 1000
-  m_Drag: 0.3
-  m_AngularDrag: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 2
 --- !u!65 &6509500
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -10815,129 +10796,3 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 104224}
   m_IsPrefabParent: 1
---- !u!1 &1000013128444496
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 4000011148194062}
-  - 20: {fileID: 20000013615839416}
-  - 124: {fileID: 124000012270232978}
-  - 92: {fileID: 92000013729833112}
-  - 81: {fileID: 81000012785937894}
-  m_Layer: 0
-  m_Name: Camera
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4000011148194062
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013128444496}
-  m_LocalRotation: {x: -0, y: -0.06885686, z: -0, w: 0.99762654}
-  m_LocalPosition: {x: -0.5215953, y: 3.4006937, z: -14.984618}
-  m_LocalScale: {x: 0.8194449, y: 0.8194443, z: 0.8194445}
-  m_LocalEulerAnglesHint: {x: 0, y: -98.04101, z: 0}
-  m_Children: []
-  m_Father: {fileID: 461154}
-  m_RootOrder: 1
---- !u!20 &20000013615839416
-Camera:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013128444496}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: 0
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
-  m_StereoMirrorMode: 0
---- !u!81 &81000012785937894
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013128444496}
-  m_Enabled: 1
---- !u!92 &92000013729833112
-Behaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013128444496}
-  m_Enabled: 1
---- !u!114 &114000010594972938
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 104224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ea65b38d485c374caa584a03f1de571, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_WheelColliders:
-  - {fileID: 14605488}
-  - {fileID: 14676850}
-  - {fileID: 14669952}
-  - {fileID: 14681816}
-  m_WheelMeshes:
-  - {fileID: 125396}
-  - {fileID: 146720}
-  - {fileID: 128936}
-  - {fileID: 177884}
-  MaxSteerAngle: 30
-  DriveTorque: 10000
-  BoostForce: 100000
-  MaxTorque: 10000
-  BrakeInput: 0
-  CurrentSteerAngle: 0
-  DownForce: 1000
---- !u!114 &114000012848747364
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 104224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c8da438f155cf64ab92eea9aafc5463, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!124 &124000012270232978
-Behaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013128444496}
-  m_Enabled: 1
