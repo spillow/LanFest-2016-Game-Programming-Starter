@@ -10,6 +10,7 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private float CurrTorque = 0f;
         public float MaxTorque = 10000f;
+        public float MaxSteerAngle = 30f;
 
         private Rigidbody m_Rigidbody;
 
@@ -65,7 +66,19 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void ControlWheels(float steer)
         {
-            // TODO
+            for (int i = 0; i < 4; i++)
+            {
+                Quaternion quat;
+                Vector3 position;
+                m_WheelColliders[i].GetWorldPose(out position, out quat);
+                m_WheelMeshes[i].transform.position = position;
+                m_WheelMeshes[i].transform.rotation = quat;
+            }
+
+            float angle = steer * MaxSteerAngle;
+            m_WheelColliders[0].steerAngle = angle;
+            m_WheelColliders[1].steerAngle = angle;
+            CurrentSteerAngle = angle;
         }
 
         private void Boost(float boost)
@@ -75,21 +88,27 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void Drive(float accel)
         {
-            // TODO
+            float torque = accel * (CurrTorque / 4f);
+            for (int i = 0; i < 4; i++)
+            {
+                m_WheelColliders[i].motorTorque = torque;
+            }
+
+            BrakeInput = -1f * Mathf.Clamp(accel, -1, 0);
         }
 
-        // Are all four wheels on a surface?
+        // Is any wheel on a surface?
         public bool InContactWithSurface()
         {
             for (int i = 0; i < 4; i++)
             {
                 WheelHit wheelhit;
                 m_WheelColliders[i].GetGroundHit(out wheelhit);
-                if (wheelhit.normal == Vector3.zero)
-                    return false; // wheels aren't on the ground 
+                if (wheelhit.normal != Vector3.zero)
+                    return true; // wheels aren't on the ground 
             }
 
-            return true;
+            return false;
         }
 
         private void MoveInAir(float steer, float accel, float roll)

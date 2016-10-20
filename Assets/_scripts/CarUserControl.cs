@@ -15,9 +15,13 @@ public class CarUserControl : MonoBehaviour
 
     void FixedUpdate()
     {
-        // TODO
+        // pass the input to the car!
+        float steer = CrossPlatformInputManager.GetAxis("Horizontal");
+        float accel = CrossPlatformInputManager.GetAxis("Vertical");
+        float jump = CrossPlatformInputManager.GetAxis("Jump");
+        float boost = CrossPlatformInputManager.GetAxis("Boost");
+        float roll = CrossPlatformInputManager.GetAxis("AirRollBrake");
 
-        // Uncomment after defining variables
-        //m_Car.Move(steer, accel, jump, boost, roll);
+        m_Car.Move(steer, accel, jump, boost, roll);
     }
 }
