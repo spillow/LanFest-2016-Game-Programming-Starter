@@ -25,6 +25,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 461154}
+  - 54: {fileID: 54000010434937308}
+  - 114: {fileID: 114000011230194638}
+  - 114: {fileID: 114000012335752930}
   m_Layer: 0
   m_Name: Car
   m_TagString: Player
@@ -959,6 +962,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 415774}
+  - {fileID: 4000011418249838}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &462150
@@ -10796,3 +10800,86 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 104224}
   m_IsPrefabParent: 1
+--- !u!1 &1000013623237562
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000011418249838}
+  m_Layer: 0
+  m_Name: CenterOfMass
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4000011418249838
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013623237562}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 461154}
+  m_RootOrder: 1
+--- !u!54 &54000010434937308
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104224}
+  serializedVersion: 2
+  m_Mass: 1000
+  m_Drag: 0.3
+  m_AngularDrag: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
+--- !u!114 &114000011230194638
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ea65b38d485c374caa584a03f1de571, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_WheelColliders:
+  - {fileID: 14605488}
+  - {fileID: 14676850}
+  - {fileID: 14669952}
+  - {fileID: 14681816}
+  m_WheelMeshes:
+  - {fileID: 125396}
+  - {fileID: 146720}
+  - {fileID: 128936}
+  - {fileID: 177884}
+  MaxTorque: 10000
+  MaxSteerAngle: 30
+  BoostForce: 100000
+  JumpForce: 1000000
+  AirRollFactor: 5000
+  FlipFactor: 16000
+  BrakeInput: 0
+  CurrentSteerAngle: 0
+--- !u!114 &114000012335752930
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 104224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c8da438f155cf64ab92eea9aafc5463, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

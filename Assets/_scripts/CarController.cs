@@ -11,6 +11,11 @@ namespace UnityStandardAssets.Vehicles.Car
         private float CurrTorque = 0f;
         public float MaxTorque = 10000f;
         public float MaxSteerAngle = 30f;
+        public float BoostForce = 100000f;
+        public float JumpForce = 1000000f;
+
+        public float AirRollFactor = 5000f;
+        public float FlipFactor = 16000f;
 
         private Rigidbody m_Rigidbody;
 
@@ -26,6 +31,9 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void SteerHelper()
         {
+            if (!InContactWithSurface())
+                return;
+
             // this if is needed to avoid gimbal lock problems that will make the car suddenly shift direction
             if (Mathf.Abs(m_OldRotation - transform.eulerAngles.y) < 10f)
             {
@@ -83,7 +91,9 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void Boost(float boost)
         {
-            // TODO
+            m_Rigidbody.AddForce(
+                    transform.forward * boost * BoostForce * Time.deltaTime,
+                    ForceMode.Impulse);
         }
 
         private void Drive(float accel)
@@ -113,12 +123,35 @@ namespace UnityStandardAssets.Vehicles.Car
 
         private void MoveInAir(float steer, float accel, float roll)
         {
-            // TODO
+            if (InContactWithSurface())
+                return;
+
+            if (roll > 0f)
+            {
+                Vector3 airRoll = new Vector3(
+                    0f, 0f,
+                    -1f * steer * roll * AirRollFactor * Time.deltaTime);
+                m_Rigidbody.AddRelativeTorque(airRoll, ForceMode.Impulse);
+            }
+            else
+            {
+                Vector3 torqDir = new Vector3(
+                    accel,
+                    steer,
+                    0f);
+                m_Rigidbody.AddRelativeTorque(
+                    torqDir * FlipFactor * Time.deltaTime, ForceMode.Impulse);
+            }
         }
 
         private void Jump(float jump)
         {
-            // TODO
+            if (!InContactWithSurface())
+                return;
+
+            m_Rigidbody.AddForce(
+                    transform.up * jump * JumpForce * Time.deltaTime,
+                    ForceMode.Impulse);
         }
 
         public void Move(float steer, float accel, float jump, float boost, float roll)

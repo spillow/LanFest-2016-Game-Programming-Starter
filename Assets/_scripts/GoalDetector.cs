@@ -5,8 +5,14 @@ using UnityEngine.UI;
 
 public class GoalDetector : MonoBehaviour
 {
+    public GameObject Ball;
+    public Text GoalText;
+
     void OnTriggerEnter(Collider other)
     {
-        // TODO
+        if (other.gameObject == Ball)
+        {
+            GoalText.text = "Goal Scored!";
+        }
     }
 }
